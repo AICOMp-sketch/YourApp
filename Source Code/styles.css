@@ -1,0 +1,542 @@
+/* General Styles */
+:root {
+    --primary-color: #007bff; /* A nice blue */
+    --secondary-color: #6c757d; /* Grey */
+    --accent-color: #28a745; /* Green for success */
+    --background-light: #f8f9fa;
+    --text-color: #343a40;
+    --white: #ffffff;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-light);
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Header - Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), #6a11cb); /* Gradient background */
+    color: var(--white);
+    padding: 60px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="%23ffffff" fill-opacity="0.05"/></svg>') repeat;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--white);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e0e0e0;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: var(--white);
+    cursor: pointer;
+    z-index: 100; /* Ensure it's above other content */
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap; /* For responsiveness */
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-text h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.download-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px var(--shadow-light);
+}
+
+.btn-google-play {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.btn-google-play:hover {
+    background-color: #218838;
+    transform: translateY(-3px);
+}
+
+.btn-app-store {
+    background-color: #000;
+    color: var(--white);
+}
+
+.btn-app-store:hover {
+    background-color: #333;
+    transform: translateY(-3px);
+}
+
+.btn i {
+    font-size: 1.2em;
+}
+
+.btn-large {
+    padding: 18px 35px;
+    font-size: 1.1em;
+}
+
+.small-text {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 450px;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px var(--shadow-light);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+
+/* Main Content Sections */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+section h3 {
+    font-size: 2.8em;
+    margin-bottom: 60px;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+}
+
+section h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+
+/* Features Section */
+.features-section {
+    background-color: var(--white);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.feature-item {
+    background-color: var(--background-light);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-item .icon-large {
+    font-size: 3.5em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.feature-item h4 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.feature-item p {
+    color: var(--secondary-color);
+}
+
+/* REMOVED SCREENSHOTS SECTION CSS */
+/*
+.screenshots-section {
+    background-color: var(--background-light);
+}
+
+.screenshot-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    box-shadow: 0 5px 20px var(--shadow-light);
+}
+
+.screenshot-gallery img {
+    border-radius: var(--border-radius);
+    box-shadow: 0 3px 10px var(--shadow-light);
+    transition: transform 0.3s ease;
+}
+
+.screenshot-gallery img:hover {
+    transform: scale(1.03);
+}
+*/
+
+/* Testimonials Section */
+.testimonials-section {
+    background-color: var(--white);
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-item {
+    background-color: var(--background-light);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px var(--shadow-light);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-item p {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.testimonial-item span {
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: right;
+    display: block;
+}
+
+/* Call to Action Section */
+.call-to-action-section {
+    background: linear-gradient(45deg, #1a2980, #26d0ce); /* Another nice gradient */
+    color: var(--white);
+    padding: 80px 0;
+    border-radius: var(--border-radius);
+    margin: 40px auto;
+    max-width: 1000px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.call-to-action-section h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.call-to-action-section p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.call-to-action-section .download-buttons {
+    display: flex;
+    justify-content: center; /* This is the key change! */
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: var(--white);
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero-text h2 {
+        font-size: 2.8em;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        order: -1; /* Move image above text on smaller screens */
+        margin-bottom: 40px;
+    }
+
+    .hero-image img {
+        max-width: 350px;
+    }
+
+    .nav-links {
+        display: none; /* Hide desktop nav links on smaller screens */
+        flex-direction: column;
+        position: absolute;
+        top: 80px; /* Adjust based on header height */
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        padding: 20px 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        z-index: 99;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    section h3 {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 0;
+    }
+
+    .hero-text h2 {
+        font-size: 2.2em;
+    }
+
+    .hero-text p {
+        font-size: 1em;
+    }
+
+    .download-buttons {
+        justify-content: center;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding: 12px 20px;
+    }
+
+    .feature-item, .testimonial-item {
+        padding: 25px;
+    }
+
+    /* REMOVED SCREENSHOTS SECTION RESPONSIVE CSS */
+    /*
+    .screenshot-gallery {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+    */
+
+    .call-to-action-section {
+        padding: 60px 20px;
+    }
+
+    .call-to-action-section h2 {
+        font-size: 2.5em;
+    }
+
+    .call-to-action-section p {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-text h2 {
+        font-size: 1.8em;
+    }
+
+    section {
+        padding: 50px 0;
+    }
+
+    section h3 {
+        font-size: 1.8em;
+        margin-bottom: 40px;
+    }
+
+    .btn-large {
+        font-size: 1em;
+        padding: 15px 25px;
+    }
+}
